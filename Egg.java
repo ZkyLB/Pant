@@ -15,7 +15,7 @@ public class Pant{
             .subscribe();
 
         client.getEventDispatcher().on(MessageCreateEvent.class).map(MessageCreateEvent::getMessage).filter(m -> Math.random() < 1.0 / 1000.0)
-            .flatMap(Message::getChannel).flatMap(channel -> channel.createMessage("pant")).subscribe();
+            .flatMap(Message::getChannel).flatMap(channel -> channel.createMessage("eat pant")).subscribe();
 
         client.login().block();
     }
