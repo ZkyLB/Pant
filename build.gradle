@@ -1,13 +1,13 @@
 apply plugin: 'java'
 
 sourceSets.main.java.srcDirs = ["$projectDir/"]
-sourceSets.main.java.include "Egg.java"
+sourceSets.main.java.include "Pant.java"
 
 repositories{ mavenCentral() }
 dependencies{ implementation 'com.discord4j:discord4j-core:3.0.11' }
 
 task dist(type: Jar, dependsOn: classes){
-    manifest{ attributes 'Main-Class': "Egg" }
+    manifest{ attributes 'Main-Class': "Pant" }
     from{ configurations.compileClasspath.collect{ it.isDirectory() ? it : zipTree(it)}}
     from files(sourceSets.main.output)
 }
